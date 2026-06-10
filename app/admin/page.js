@@ -216,7 +216,7 @@ export default function AdminPage() {
             <div className="analytics-card" style={{ gridColumn: '1 / -1' }}>
               <h3>Regional Distribution</h3>
               <div className="chart-bar-group">
-                {data.analytics.byRegion.sort((a,b) => b.count - a.count).map((r, i) => {
+                {[...data.analytics.byRegion].sort((a,b) => b.count - a.count).map((r, i) => {
                   const max = Math.max(...data.analytics.byRegion.map(x => x.count), 1);
                   const pct = Math.round((r.count / max) * 100);
                   return (

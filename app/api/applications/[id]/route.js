@@ -1,6 +1,8 @@
 import prisma from '@/lib/prisma';
 import { getCurrentUser, unauthorized, forbidden } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+
 export async function PATCH(request, { params }) {
   try {
     const payload = await getCurrentUser(request);
